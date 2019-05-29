@@ -165,6 +165,17 @@
 </body>
 
 <script>
+    window.addEventListener("keypress", function(e){
+
+        //"${keyPressEvent.keyCode}" v. "keyCode"
+        // let pianoKey = document.querySelector('.pianoKey[dataKey="${e.keyCode}"]');
+        // let tone = document.querySelector('audio[dataKey="${e.keyCode}"]');//keyCode tone we want to play
+        let tone = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        if(!tone) return;
+        const pianoKey = document.querySelector(`.pianoKey[data-key="${e.keyCode}"]`);
+        // tone.currentTime = 0;
+        tone.play();
+    });
 </script>
 
 </html>
